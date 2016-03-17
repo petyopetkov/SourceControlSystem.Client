@@ -1,11 +1,14 @@
 (function () {
     'use strict';
 
-    function HomeController() {
+    function HomeController(stats) {
         var vm = this;
-
+        stats.getStats()
+            .then(function (statistics) {
+                vm.stats = statistics;
+            });
     }
 
     angular.module('myApp.controllers')
-        .controller('HomeController', [HomeController]);
+        .controller('HomeController', ['stats', HomeController]);
 }());

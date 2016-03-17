@@ -31,8 +31,7 @@
                         if (response.data["access_token"]) {
                             identity.setCurrentUser(response.data);
                             deferred.resolve(true);
-                        }
-                        else {
+                        } else {
                             deferred.resolve(false);
                         }
                     });
@@ -54,8 +53,7 @@
             isAuthenticated: function () {
                 if (identity.isAuthenticated()) {
                     return true;
-                }
-                else {
+                } else {
                     return $q.reject('not authorized');
                 }
             }
