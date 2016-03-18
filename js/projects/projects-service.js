@@ -11,9 +11,14 @@
             return data.get(PROJECTS_URL + '/' + id);
         }
 
+        function getAll() {
+            return data.get(PROJECTS_URL + '/all');
+        }
+
         return {
             getPublicProjects: getPublicProjects,
-            getById: getById
+            getById: getById,
+            getAll: getAll
         };
     }
 

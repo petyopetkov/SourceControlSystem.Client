@@ -13,6 +13,11 @@
                 templateUrl: 'views/partials/identity/register.html',
                 controller: 'SignUpCtrl'
             })
+            .when('/projects/all', {
+                templateUrl: 'views/partials/projects/all-projects.html',
+                controller: 'ProjectsController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 

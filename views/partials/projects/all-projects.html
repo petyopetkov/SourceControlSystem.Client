@@ -1,0 +1,9 @@
+<div ng-show="vm.projects && vm.projects.length > 0 && vm.identity.isAuthenticated()">
+    <div all-projects />
+</div>
+<div ng-hide="vm.projects && vm.projects.length > 0 || !vm.identity.isAuthenticated()">
+    <h2 class="text-center">No Results!</h2>
+</div>
+<div ng-show="!vm.identity.isAuthenticated()">
+    <h3 class="text-center">Not Authorized!</h3>
+</div>

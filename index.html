@@ -25,10 +25,10 @@
                     <li>
                         <a href="#/">HOME</a>
                     </li>
-                    <li ng-if="vm.identity && vm.identity.isAuthenticated()">
-                        <a href="#/">Projects</a>
+                    <li>
+                        <a href="#/projects/all">Projects</a>
                     </li>
-                    <li ng-if="vm.identity && vm.identity.isAuthenticated()">
+                    <li>
                         <a href="#/">Commits</a>
                     </li>
                 </ul>
@@ -61,10 +61,13 @@
     <script src="js/identity/login-controller.js"></script>
     <script src="js/identity/register-controller.js"></script>
     <script src="js/home/home-controller.js"></script>
+    <script src="js/projects/projects-controller.js"></script>
 
     <script src="js/common/data-service.js"></script>
     <script src="js/home/stats-service.js"></script>
     <script src="js/projects/projects-service.js"></script>
     <script src="js/commits/commits-service.js"></script>
+
+    <script src="js/projects/all-projects-directive.js"></script>
 </body>
 </html>
