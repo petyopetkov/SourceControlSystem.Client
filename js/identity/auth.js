@@ -2,7 +2,7 @@
     'use strict';
 
     function auth($http, $q, identity, authorization, baseServiceUrl) {
-        var usersApi = baseServiceUrl + '/api/users';
+        var usersApi = baseServiceUrl + '/api/account';
 
         return {
             signup: function (user) {
@@ -26,7 +26,7 @@
             login: function (user) {
                 var deferred = $q.defer();
                 user['grant_type'] = 'password';
-                $http.post(usersApi + '/login', 'username=' + user.username + '&password=' + user.password + '&grant_type=password', { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+                $http.post(baseServiceUrl + '/token', 'username=' + user.username + '&password=' + user.password + '&grant_type=password', { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
                     .then(function (response) {
                         if (response.data["access_token"]) {
                             identity.setCurrentUser(response.data);
