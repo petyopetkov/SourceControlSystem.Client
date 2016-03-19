@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="text-center">Projects
-        <a href="#/projects/create" ng-show="vm.identity.isAuthenticated()" class="btn btn-primary btn-sm pull-right">Create</a>
+        <a href="#/projects/create" ng-show="vm.identity.isAuthenticated()" class="btn btn-success pull-right">Create new project</a>
     </h2>
 
     <div ng-show="vm.identity.isAuthenticated()" class="row">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-primary pull-right" ng-click="vm.filterProjects()">Filter</button>
+                <button class="btn btn-success pull-right" ng-click="vm.filterProjects()">Filter</button>
             </div>
         </div>
         <div class="col-md-3 col-md-offset-6">
