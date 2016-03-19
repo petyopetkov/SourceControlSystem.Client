@@ -2,11 +2,92 @@
     <h2 class="text-center">Projects
         <a href="#/projects/create" ng-show="vm.identity.isAuthenticated()" class="btn btn-primary btn-sm pull-right">Create</a>
     </h2>
+
+    <div ng-show="vm.identity.isAuthenticated()" class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="search" class="control-label">Search by name and description</label>
+                </div>
+                <div>
+                    <input ng-model="vm.request.filter" type="text" id="search" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="email" class="control-label">Search by user email</label>
+                </div>
+                <div>
+                    <input ng-model="vm.request.byUser" type="text" id="email" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="sort" class="control-label">Sort</label>
+                </div>
+                <div>
+                    <select ng-model="vm.request.orderBy" ng-init="vm.request.orderBy='date'" class="form-control" id="sort">
+                        <option value="collaborators">Collaborators</option>
+                        <option value="date">Date</option>
+                        <option value="name">Name</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="order" class="control-label">Order</label>
+                </div>
+                <div>
+                    <select ng-model="vm.request.orderType" ng-init="vm.request.orderType='ask'" class="form-control" id="order">
+                        <option value="ask">Ascending</option>
+                        <option value="desk">Descending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="vm.identity.isAuthenticated()">
+        <div class="col-md-3">
+            <div class="col-md-6">
+                <div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label for="public">
+                                <input id="public" type="checkbox" ng-model="vm.request.onlyPublic">Only public
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary pull-right" ng-click="vm.filterProjects()">Filter</button>
+            </div>
+        </div>
+        <div class="col-md-3 col-md-offset-6">
+            <div class="col-md-3">
+                <button class="btn btn-primary" ng-click="vm.prevPage()">&lt&lt</button>
+            </div>
+            <div class="col-md-6">
+                <input ng-model="vm.request.page" type="number" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary" ng-click="vm.nextPage()">&gt&gt</button>
+            </div>
+        </div>
+    </div>
+    <br />
+
     <div ng-show="vm.projects && vm.projects.length > 0 && vm.identity.isAuthenticated()">
         <div all-projects />
     </div>
     <div ng-hide="vm.projects && vm.projects.length > 0 || !vm.identity.isAuthenticated()">
-        <h2 class="text-center">No Results!</h2>
+        <h2 class="text-center">No Projects!</h2>
     </div>
     <div ng-show="!vm.identity.isAuthenticated()">
         <h3 class="text-center">Not Authorized!</h3>
