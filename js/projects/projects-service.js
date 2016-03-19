@@ -11,6 +11,10 @@
             return data.get(PROJECTS_URL + '/' + id);
         }
 
+        function getFilteredProjects(filters) {
+            return data.get(PROJECTS_URL + '/all', filters);
+        }
+
         function getAll() {
             return data.get(PROJECTS_URL + '/all');
         }
@@ -18,6 +22,7 @@
         return {
             getPublicProjects: getPublicProjects,
             getById: getById,
+            getFilteredProjects: getFilteredProjects,
             getAll: getAll
         };
     }

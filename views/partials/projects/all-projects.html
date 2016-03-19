@@ -1,9 +1,14 @@
-<div ng-show="vm.projects && vm.projects.length > 0 && vm.identity.isAuthenticated()">
-    <div all-projects />
-</div>
-<div ng-hide="vm.projects && vm.projects.length > 0 || !vm.identity.isAuthenticated()">
-    <h2 class="text-center">No Results!</h2>
-</div>
-<div ng-show="!vm.identity.isAuthenticated()">
-    <h3 class="text-center">Not Authorized!</h3>
+<div class="container">
+    <h2 class="text-center">Projects
+        <a href="#/projects/create" ng-show="vm.identity.isAuthenticated()" class="btn btn-primary btn-sm pull-right">Create</a>
+    </h2>
+    <div ng-show="vm.projects && vm.projects.length > 0 && vm.identity.isAuthenticated()">
+        <div all-projects />
+    </div>
+    <div ng-hide="vm.projects && vm.projects.length > 0 || !vm.identity.isAuthenticated()">
+        <h2 class="text-center">No Results!</h2>
+    </div>
+    <div ng-show="!vm.identity.isAuthenticated()">
+        <h3 class="text-center">Not Authorized!</h3>
+    </div>
 </div>
