@@ -19,11 +19,16 @@
             return data.get(PROJECTS_URL + '/all');
         }
 
+        function  addProject(newProject) {
+            return data.post(PROJECTS_URL, newProject);
+        }
+
         return {
             getPublicProjects: getPublicProjects,
             getById: getById,
             getFilteredProjects: getFilteredProjects,
-            getAll: getAll
+            getAll: getAll,
+            addProject: addProject
         };
     }
 

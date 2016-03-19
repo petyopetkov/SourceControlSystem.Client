@@ -18,6 +18,11 @@
                 controller: 'ProjectsController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/projects/create', {
+                templateUrl: 'views/partials/projects/add-project.html',
+                controller: 'AddProjectController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 
