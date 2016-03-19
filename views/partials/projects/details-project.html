@@ -1,0 +1,47 @@
+<div class="container" ng-show="vm.identity && vm.identity.isAuthenticated()">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title centered">Project Details</h3>
+                </div>
+                <div class="panel-body centered">
+                    <div>
+                        <p>
+                            <strong>Name: </strong>{{vm.project.Name}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <strong>Created on: </strong>{{vm.project.CreatedOn | beautifulDate}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <strong>Total users: </strong>{{vm.project.TotalUsers}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <strong>License: </strong>{{vm.project.License}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 centered">
+            <button class="btn btn-primary">Add collaborator</button>
+        </div>
+        <div class="col-md-4 centered">
+            <a  href="#/commits/add/{{vm.project.Id}}" class="btn btn-primary">Add commit</a>
+        </div>
+        <div class="col-md-4 centered">
+            <a  href="#/commits/byproject/{{vm.project.Id}}" class="btn btn-primary">See commits</a>
+        </div>
+    </div>
+</div>
+<div ng-show="!vm.identity.isAuthenticated()">
+    <h3 class="centered">Not Authorized!</h3>
+</div>

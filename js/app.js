@@ -23,6 +23,11 @@
                 controller: 'AddProjectController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/projects/details/:id', {
+                templateUrl: 'views/partials/projects/details-project.html',
+                controller: 'DetailsProjectController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 
