@@ -11,9 +11,14 @@
             return data.get(COMMITS_URL + '/' + id);
         }
 
+        function addCommit(newCommit) {
+            return data.post(COMMITS_URL, newCommit);
+        }
+
         return {
             getCommits: getCommits,
-            getById: getById
+            getById: getById,
+            addCommit: addCommit
         };
     }
 

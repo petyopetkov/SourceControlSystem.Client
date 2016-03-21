@@ -28,6 +28,11 @@
                 controller: 'DetailsProjectController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/commits/add/:id', {
+                templateUrl: 'views/partials/commits/add-commit.html',
+                controller: 'AddCommitController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 

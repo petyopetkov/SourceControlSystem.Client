@@ -1,0 +1,22 @@
+<div class="container" ng-show="vm.identity && vm.identity.isAuthenticated()">
+    <div class="jumbotron">
+        <form name="addCommitForm" class="form-horizontal">
+            <fieldset>
+                <legend>Add Commit</legend>
+                <div class="form-group">
+                    <label for="sourceCode" class="col-lg-2 control-label">Source code</label>
+                    <div class="col-lg-10">
+                        <textarea ng-model="commit.sourceCode" id="sourceCode" placeholder="Source code" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    <button ng-click="vm.addCommit(commit)" ng-disabled="addCommitForm.$invalid" class="btn btn-primary btn-sm">
+                        Add
+                    </button>
+                    <a href="#/" class="btn btn-primary btn-sm">Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
