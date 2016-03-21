@@ -15,10 +15,15 @@
             return data.post(COMMITS_URL, newCommit);
         }
 
+        function getFilteredCommits(id, filter) {
+            return data.get(COMMITS_URL + '/byproject/' + id, filter);
+        }
+
         return {
             getCommits: getCommits,
             getCommitsByProject: getCommitsByProject,
-            addCommit: addCommit
+            addCommit: addCommit,
+            getFilteredCommits: getFilteredCommits
         };
     }
 

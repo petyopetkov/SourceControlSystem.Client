@@ -1,6 +1,23 @@
 <div class="container" ng-show="vm.identity && vm.identity.isAuthenticated()">
     <div>
         <h3>All commits for the  project:  <a href="#/projects/details/{{vm.project.Id}}">{{vm.project.Name}}</a></h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="search" class="control-label">Search by user email</label>
+                    </div>
+                    <div>
+                        <input ng-model="vm.request.byUser" type="text" id="email" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-success" ng-click="vm.filterCommits()">Search</button>
+        </div>
+        <hr>
         <div ng-repeat="commit in vm.commits">
             <p>
                 User name: {{commit.UserName}}
@@ -9,6 +26,17 @@
                 Created on: {{commit.CreatedOn | beautifulDate}}
             </p>
             <hr>
+        </div>
+        <div class="col-md-3 col-md-offset-6">
+            <div class="col-md-3">
+                <button class="btn btn-primary" ng-click="vm.prevPage()">&lt&lt</button>
+            </div>
+            <div class="col-md-6">
+                <input ng-model="vm.request.page" type="number" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary" ng-click="vm.nextPage()">&gt&gt</button>
+            </div>
         </div>
     </div>
 </div>
