@@ -1,0 +1,14 @@
+<div class="container" ng-show="vm.identity && vm.identity.isAuthenticated()">
+    <div>
+        <h3>All commits for the  project:  <a href="#/projects/details/{{vm.project.Id}}">{{vm.project.Name}}</a></h3>
+        <div ng-repeat="commit in vm.commits">
+            <p>
+                User name: {{commit.UserName}}
+            </p>
+            <p>
+                Created on: {{commit.CreatedOn | beautifulDate}}
+            </p>
+            <hr>
+        </div>
+    </div>
+</div>

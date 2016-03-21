@@ -33,6 +33,11 @@
                 controller: 'AddCommitController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/commits/byproject/:id', {
+                templateUrl: 'views/partials/commits/byproject-commits.html',
+                controller: 'ByprojectCommitsController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 

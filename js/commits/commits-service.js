@@ -7,8 +7,8 @@
             return data.get(COMMITS_URL);
         }
 
-        function getById(id) {
-            return data.get(COMMITS_URL + '/' + id);
+        function getCommitsByProject(id) {
+            return data.get(COMMITS_URL + '/byproject/' + id);
         }
 
         function addCommit(newCommit) {
@@ -17,7 +17,7 @@
 
         return {
             getCommits: getCommits,
-            getById: getById,
+            getCommitsByProject: getCommitsByProject,
             addCommit: addCommit
         };
     }
