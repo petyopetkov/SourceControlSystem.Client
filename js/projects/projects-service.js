@@ -19,8 +19,12 @@
             return data.get(PROJECTS_URL + '/all');
         }
 
-        function  addProject(newProject) {
+        function addProject(newProject) {
             return data.post(PROJECTS_URL, newProject);
+        }
+
+        function getCollaborators(id) {
+            return data.get(PROJECTS_URL + '/collaborators/' + id);
         }
 
         return {
@@ -28,7 +32,8 @@
             getById: getById,
             getFilteredProjects: getFilteredProjects,
             getAll: getAll,
-            addProject: addProject
+            addProject: addProject,
+            getCollaborators: getCollaborators
         };
     }
 

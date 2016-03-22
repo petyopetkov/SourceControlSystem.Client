@@ -8,6 +8,7 @@
             .then(function (foundCommit) {
                 vm.commit = foundCommit;
             });
+
     }
 
     angular.module('myApp.controllers')

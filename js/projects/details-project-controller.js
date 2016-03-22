@@ -8,6 +8,7 @@
             .then(function (foundProject) {
                 vm.project = foundProject;
             });
+
     }
 
     angular.module('myApp.controllers')

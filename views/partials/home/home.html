@@ -56,7 +56,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="commit in vm.commits">
-                            <td>{{commit.UserName}}</td>
+                            <td><a href="#/commits/{{commit.Id}}">{{commit.UserName}}</a></td>
                             <td>{{commit.CreatedOn}}</td>
                         </tr>
                         </tbody>
