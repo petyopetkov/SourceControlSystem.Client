@@ -38,6 +38,11 @@
                 controller: 'ByprojectCommitsController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/commits/:id', {
+                templateUrl: 'views/partials/commits/details-commit.html',
+                controller: 'DetailsCommitController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 

@@ -11,7 +11,6 @@
             .then(function (latestProjects) {
                 vm.projects = latestProjects;
             });
-        // TODO: remove comment
         commits.getCommits()
             .then(function (latestCommits) {
                 vm.commits = latestCommits;
