@@ -12,11 +12,10 @@
                 vm.projects = latestProjects;
             });
         // TODO: remove comment
-        //commits.getCommits()
-        //    .then(function (latestCommits) {
-        //        console.log(latestCommits);
-        //        vm.commits = latestCommits;
-        //    });
+        commits.getCommits()
+            .then(function (latestCommits) {
+                vm.commits = latestCommits;
+            });
     }
 
     angular.module('myApp.controllers')

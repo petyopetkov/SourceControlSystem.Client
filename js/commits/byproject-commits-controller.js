@@ -24,7 +24,6 @@
             commits.getFilteredCommits($routeParams.id, vm.request)
                 .then(function (filteredCommits) {
                     vm.commits = filteredCommits;
-                    console.log(vm.commits);
                 });
         };
 
