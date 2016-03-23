@@ -28,7 +28,7 @@
         }
 
         function addCollaborator(id, collaborator) {
-            return data.put(PROJECTS_URL + '/' + id, collaborator);
+            return data.put(PROJECTS_URL + '/' + id, "\"" + collaborator + '\"');
         }
 
         return {

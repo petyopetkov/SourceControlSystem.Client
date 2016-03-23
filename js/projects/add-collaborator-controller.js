@@ -13,7 +13,7 @@
             projects.addCollaborator($routeParams.id, collaborator)
                 .then(function () {
                     notifier.success('Collaborator added');
-                    $location.path('projects');
+                    $location.path('projects/details/' + $routeParams.id);
                 });
         };
     }
