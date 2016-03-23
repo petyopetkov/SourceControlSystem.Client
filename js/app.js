@@ -33,6 +33,11 @@
                 controller: 'CollaboratorsProjectController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/projects/collaborators/add/:id', {
+                templateUrl: 'views/partials/projects/add-collaborator.html',
+                controller: 'AddCollaboratorController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .when('/commits/add/:id', {
                 templateUrl: 'views/partials/commits/add-commit.html',
                 controller: 'AddCommitController',

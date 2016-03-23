@@ -45,11 +45,11 @@
             return deferred.promise;
         }
 
-        function put(url) {
+        function put(url, putData) {
             var deferred = $q.defer(),
                 authHeader = authorization.getAuthorizationHeader();
 
-            $http.put(baseServiceUrl + '/' + url, {headers: authHeader})
+            $http.put(baseServiceUrl + '/' + url, putData, {headers: authHeader})
                 .then(function (responce) {
                     deferred.resolve(responce.data);
                 }, function (err) {

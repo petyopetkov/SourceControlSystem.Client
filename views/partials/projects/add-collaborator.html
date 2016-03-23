@@ -1,0 +1,22 @@
+<div class="container" ng-show="vm.identity && vm.identity.isAuthenticated()">
+    <div class="jumbotron">
+        <form name="addCollaboratorForm" class="form-horizontal">
+            <fieldset>
+                <legend>Add Collaborator</legend>
+                <div class="form-group">
+                    <label for="collaborator" class="col-lg-2 control-label">Collaborator email</label>
+                    <div class="col-lg-10">
+                        <input type="email" ng-model="collaborator" id="collaborator" placeholder="Collaborator Email" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    <button ng-click="vm.addCollaborator(collaborator)" ng-disabled="addCollaboratorForm.$invalid" class="btn btn-primary btn-sm">
+                        Add
+                    </button>
+                    <a href="#/projects/details/{{vm.project.Id}}" class="btn btn-primary btn-sm">Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

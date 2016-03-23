@@ -27,13 +27,18 @@
             return data.get(PROJECTS_URL + '/collaborators/' + id);
         }
 
+        function addCollaborator(id, collaborator) {
+            return data.put(PROJECTS_URL + '/' + id, collaborator);
+        }
+
         return {
             getPublicProjects: getPublicProjects,
             getById: getById,
             getFilteredProjects: getFilteredProjects,
             getAll: getAll,
             addProject: addProject,
-            getCollaborators: getCollaborators
+            getCollaborators: getCollaborators,
+            addCollaborator: addCollaborator
         };
     }
 
